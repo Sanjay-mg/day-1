@@ -9,5 +9,6 @@ public class EBH012 {
 //		printPattern();
 		m1("San",true);
 //		m1("A",m1("B",false));
+
 	}
 }
