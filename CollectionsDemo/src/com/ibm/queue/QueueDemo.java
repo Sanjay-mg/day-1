@@ -9,7 +9,9 @@ public class QueueDemo {
 		queue.add("1");
 		queue.add("2");
 		queue.add("3");
-		System.out.println(queue.size());
+		System.out.println(queue);
+		System.out.println(queue.remove());
+//		System.out.println(queue.size());
 		System.out.println(queue);
 	}
 }
