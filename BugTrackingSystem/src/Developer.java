@@ -1,30 +1,21 @@
 
-public class Developer {
-	private int developerID;
-	private String developerName;
-	private String developerEmail;
-	
-	public Developer(String name) {
-		setDeveloperName(name);
-	}
-	public int getDeveloperID() {
-		return developerID;
-	}
-	public void setDeveloperID(int developerID) {
-		this.developerID = developerID;
-	}
-	public String getDeveloperName() {
-		return developerName;
-	}
-	public void setDeveloperName(String developerName) {
-		this.developerName = developerName;
-	}
-	public String getDeveloperEmail() {
-		return developerEmail;
-	}
-	public void setDeveloperEmail(String developerEmail) {
-		this.developerEmail = developerEmail;
+public class Developer extends Employee{
+
+	public Developer(int id, String name) {
+		setId(id);
+		setName(name);
 	}
 	
-	
+	public void setBugStatus(Bug bug, STATUS status) {
+		bug.setStatus(status);
+	}
+	public void assignBugTester(Bug bug, int testerID) {
+		bug.setTesterID(testerID);
+		bug.setStatus(STATUS.PENDING_RETEST);
+	}
+	@Override
+	public String toString() {
+		return "Id is: "+this.getId()+" and name is: "+this.getName();
+		
+	}
 }

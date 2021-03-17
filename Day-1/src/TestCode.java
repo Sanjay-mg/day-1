@@ -1,16 +1,24 @@
-
+class Level1Exception extends Exception {}
+class Level2Exception extends Level1Exception {}
+class Level3Exception extends Level2Exception {}
 public class TestCode {
-	 int[] i1 = {1}, i2 = {3};
-	  void m1() {
-	    m2(i1, i2);
-	    System.out.print(i1[0] + "," + i2[0]);
-	  }
-	  void m2(int[] i1, int[] i2) {
-	    int[] i3 = i1;
-	    this.i1 = i2;
-	    this.i2 = i3;
-	  }
-		public static void main(String args[]) {
-			 new TestCode().m1();
+	public static void main(String args[]) {
+		 int a,b,c,d,f,g,x;
+		    a = b = c = d = f = g = 0;
+		    x = 3;
+		    try {
+		      try {
+		        switch (x) {
+		          case 1: throw new Level1Exception();
+		          case 2: throw new Level2Exception();
+		          case 3: throw new Level3Exception();
+		      } a++; }
+		      catch (Level2Exception e) {b++;}
+		      finally {c++;}
+		    }
+		    catch (Level1Exception e) { d++;}
+		    catch (Exception e) {f++;}
+		    finally {g++;}
+		    System.out.print(a+","+b+","+c+","+d+","+f+","+g);
 }
 }
